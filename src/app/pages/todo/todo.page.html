@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Todo list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item>
+    <ion-input label="Nouvelle tâche" label-placement="floating" [(ngModel)]="taskName"></ion-input>
+    <ion-button slot="end" size="small" color="primary" fill="outline" (click)="addTask()">
+      <ion-icon name="add"></ion-icon>
+    </ion-button>
+  </ion-item>
+  <h3 class="ion-padding">Tâches</h3>
+  <ion-list>
+    @for (task of tasks; track task.name) {
+      <ion-item (click)="displayAction(task)">
+        <span class="ion-padding">{{task.name}}</span>
+        @if (task.checked) {
+          <ion-icon slot="end" color="success" name="checkmark"></ion-icon>
+        }
+      </ion-item>
+    }
+  </ion-list>
+</ion-content>
