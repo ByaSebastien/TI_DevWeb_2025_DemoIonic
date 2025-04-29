@@ -14,4 +14,8 @@ export const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full',
   },
+  {
+    path: 'scan',
+    loadComponent: () => import('./pages/scan/scan.page').then( m => m.ScanPage)
+  },
 ];
