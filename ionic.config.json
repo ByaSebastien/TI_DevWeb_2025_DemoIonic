@@ -1,0 +1,7 @@
+{
+  "name": "TI_DevWeb_2025_DemoIonic",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
